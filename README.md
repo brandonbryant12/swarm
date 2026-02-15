@@ -127,11 +127,18 @@ pnpm --filter @swarm/cli dev -- scrape --subreddit phishing --limit 200 --includ
 pnpm --filter @swarm/cli dev -- scrape --subreddit IdentityTheft --limit 200 --include-comments
 ```
 
-### 5. Start backend API
+### 5. Start web + server together (Turbo)
 
 ```bash
-pnpm dev:server
+pnpm dev
 ```
+
+This runs:
+
+1. `@swarm/server` on `http://localhost:3000`
+2. `@swarm/web` on `http://localhost:5173`
+
+Optional: run services separately with `pnpm dev:server` and `pnpm dev:web`.
 
 Health check:
 
@@ -139,15 +146,7 @@ Health check:
 curl http://localhost:3000/health
 ```
 
-### 6. Start frontend
-
-```bash
-pnpm dev:web
-```
-
-Open `http://localhost:5173`.
-
-### 7. Sign in and use app
+### 6. Sign in and use app
 
 1. Create account (email/password) in UI.
 2. Open `Ops` page to confirm protected stats endpoint.
