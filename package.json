@@ -1,0 +1,21 @@
+{
+  "name": "swarm",
+  "private": true,
+  "packageManager": "pnpm@10.6.2",
+  "scripts": {
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "dev": "turbo run dev --filter=@swarm/server --filter=@swarm/web --parallel",
+    "dev:server": "pnpm --filter @swarm/server dev",
+    "dev:web": "pnpm --filter @swarm/web dev",
+    "dev:cli": "pnpm --filter @swarm/cli dev --",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "tsx": "^4.20.3",
+    "turbo": "^2.5.6",
+    "typescript": "^5.8.2"
+  }
+}
